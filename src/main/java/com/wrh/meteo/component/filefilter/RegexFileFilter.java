@@ -1,4 +1,4 @@
-package com.wrh.meteo.component;
+package com.wrh.meteo.component.filefilter;
 
 import org.apache.commons.io.filefilter.IOFileFilter;
 

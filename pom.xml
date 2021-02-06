@@ -20,6 +20,8 @@
         <lombok.version>1.18.18</lombok.version>
         <springframework.version>5.3.3</springframework.version>
         <commons-io.version>2.8.0</commons-io.version>
+        <meteodata.version>1.3.2</meteodata.version>
+        <netcdfAll.version>4.6.8</netcdfAll.version>
 
     </properties>
 
@@ -44,6 +46,53 @@
             <version>${commons-io.version}</version>
         </dependency>
 
+        <dependency>
+             <groupId>com.hxgis</groupId>
+             <artifactId>meteodata</artifactId>
+             <version>${meteodata.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>edu.ucar</groupId>
+            <artifactId>netcdfAll</artifactId>
+            <version>${netcdfAll.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.protobuf</groupId>
+                    <artifactId>protobuf-java</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>de.grundid.opendatalab</groupId>
+                    <artifactId>geojson-jackson</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
     </dependencies>
+
+    <repositories>
+        <repository>
+            <!-- aliyun center-->
+            <id>maven-central</id>
+            <name>maven-central</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        </repository>
+        <repository>
+            <!-- huaxin center-->
+            <id>maven-public</id>
+            <name>HXLC Nexus Repository</name>
+            <url>http://59.172.25.122:8086/repository/maven-public/</url>
+        </repository>
+        <repository>
+            <id>com.hxgis</id>
+            <name>boundless</name>
+            <url>http://repo.boundlessgeo.com/main/</url>
+        </repository>
+
+    </repositories>
     
 </project>

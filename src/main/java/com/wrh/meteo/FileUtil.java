@@ -1,6 +1,6 @@
 package com.wrh.meteo;
 
-import com.wrh.meteo.exception.FileNotOnlyException;
+import com.wrh.meteo.component.exception.FileNotOnlyException;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.FileFilterUtils;
 import org.apache.commons.io.filefilter.RegexFileFilter;

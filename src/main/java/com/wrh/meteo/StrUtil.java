@@ -36,4 +36,30 @@ public class StrUtil {
     public static final String HTML_GT = "&gt;";
     public static final String EMPTY_JSON = "{}";
 
+    public static String repeat(CharSequence str, int count) {
+        if (null == str) {
+            return null;
+        } else if (count <= 0) {
+            return "";
+        } else if (count != 1 && str.length() != 0) {
+            int len = str.length();
+            long longSize = (long) len * (long) count;
+            int size = (int) longSize;
+            if ((long) size != longSize) {
+                throw new ArrayIndexOutOfBoundsException("Required String length is too large: " + longSize);
+            } else {
+                char[] array = new char[size];
+                str.toString().getChars(0, len, array, 0);
+                int n;
+                for (n = len; n < size - n; n <<= 1) {
+                    System.arraycopy(array, 0, array, n, n);
+                }
+                System.arraycopy(array, 0, array, n, size - n);
+                return new String(array);
+            }
+        } else {
+            return str.toString();
+        }
+    }
+
 }

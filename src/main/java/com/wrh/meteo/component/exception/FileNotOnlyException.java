@@ -1,4 +1,4 @@
-package com.wrh.meteo.exception;
+package com.wrh.meteo.component.exception;
 
 import java.io.IOException;
 
