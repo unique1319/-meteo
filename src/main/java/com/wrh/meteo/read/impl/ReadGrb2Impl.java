@@ -1,6 +1,7 @@
 package com.wrh.meteo.read.impl;
 
 import com.hxgis.meteodata.comdata.GridData;
+import com.wrh.meteo.NumberUtil;
 import com.wrh.meteo.read.ReadGridData;
 import com.wrh.meteo.read.ReadGridDataList;
 import lombok.Data;
@@ -53,13 +54,13 @@ public class ReadGrb2Impl implements ReadGridDataList {
                     g.setStartY(latArray.getFloat(0));
                     g.setEndY(latArray.getFloat(latSize - 1));
                     g.setyNum(latSize);
-                    g.setyRes(Float.parseFloat(NumberUtil.roundStr(latArray.getFloat(1) - latArray.getFloat(0), 3)));
+                    g.setyRes((float) NumberUtil.round(latArray.getFloat(1) - latArray.getFloat(0), 3));
                 }
                 if (lonArray != null) {
                     g.setStartX(lonArray.getFloat(0));
                     g.setEndX(lonArray.getFloat(latSize - 1));
                     g.setxNum(lonSize);
-                    g.setxRes(Float.parseFloat(NumberUtil.roundStr(lonArray.getFloat(1) - lonArray.getFloat(0), 3)));
+                    g.setxRes((float)NumberUtil.round(lonArray.getFloat(1) - lonArray.getFloat(0), 3));
                 }
                 if ("FLOAT".equals(geoGrid.getDataType().name())) {
                     float[][] grid = (float[][]) geoGrid.readYXData(t, 0).copyToNDJavaArray();
@@ -70,7 +71,6 @@ public class ReadGrb2Impl implements ReadGridDataList {
                 } else {
                     throw new Exception("格点解析异常，数据类型未指定：" + geoGrid.getDataType().name());
                 }
-
                 list.add(g);
             }
         } catch (Exception e) {

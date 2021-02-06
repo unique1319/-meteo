@@ -20,7 +20,7 @@ public class NumberUtil {
     }
 
     public static String round(String s, int scale) {
-        DecimalFormat df = new DecimalFormat("");
+        DecimalFormat df = new DecimalFormat("#." + StrUtil.repeat("0", scale));
         return df.format(s);
     }
 

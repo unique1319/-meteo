@@ -62,4 +62,7 @@ public class StrUtil {
         }
     }
 
+    public static void main(String[] args) {
+        System.out.println(repeat("t",3));
+    }
 }
