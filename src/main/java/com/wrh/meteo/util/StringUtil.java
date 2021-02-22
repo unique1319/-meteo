@@ -1,4 +1,4 @@
-package com.wrh.meteo;
+package com.wrh.meteo.util;
 
 import java.util.ArrayList;
 import java.util.List;

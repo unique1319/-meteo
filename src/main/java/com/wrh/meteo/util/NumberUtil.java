@@ -1,4 +1,4 @@
-package com.wrh.meteo;
+package com.wrh.meteo.util;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
@@ -16,6 +16,10 @@ public class NumberUtil {
     }
 
     public static double round(double d, int scale) {
+        return Math.round(d * Math.pow(10, scale)) * Math.pow(10, -scale);
+    }
+
+    public static double round(float d, int scale) {
         return Math.round(d * Math.pow(10, scale)) * Math.pow(10, -scale);
     }
 

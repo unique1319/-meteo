@@ -1,9 +1,8 @@
-package com.wrh.meteo.read.impl;
+package com.wrh.meteo.read;
 
 import com.hxgis.meteodata.comdata.GridData;
-import com.wrh.meteo.NumberUtil;
-import com.wrh.meteo.read.ReadGridData;
-import com.wrh.meteo.read.ReadGridDataList;
+import com.wrh.meteo.util.ArrayUtil;
+import com.wrh.meteo.util.NumberUtil;
 import lombok.Data;
 import ucar.ma2.Array;
 import ucar.nc2.dt.GridCoordSystem;
@@ -20,12 +19,12 @@ import java.util.List;
  * @author wrh
  * @version 1.0
  * @date 2021/2/6 10:01
- * @describe
+ * @describe 读取GRB2文件
  */
-public class ReadGrb2Impl implements ReadGridDataList {
+public class ReadGrb2File {
 
-    @Override
     public List<GridData> read(File file) {
+        int scale = 3;
         List<GridData> list = new ArrayList<>();
         AccessGRBData grbData = null;
         try {
@@ -54,20 +53,20 @@ public class ReadGrb2Impl implements ReadGridDataList {
                     g.setStartY(latArray.getFloat(0));
                     g.setEndY(latArray.getFloat(latSize - 1));
                     g.setyNum(latSize);
-                    g.setyRes((float) NumberUtil.round(latArray.getFloat(1) - latArray.getFloat(0), 3));
+                    g.setyRes((float) NumberUtil.round(latArray.getFloat(1) - latArray.getFloat(0), scale));
                 }
                 if (lonArray != null) {
                     g.setStartX(lonArray.getFloat(0));
                     g.setEndX(lonArray.getFloat(latSize - 1));
                     g.setxNum(lonSize);
-                    g.setxRes((float)NumberUtil.round(lonArray.getFloat(1) - lonArray.getFloat(0), 3));
+                    g.setxRes((float) NumberUtil.round(lonArray.getFloat(1) - lonArray.getFloat(0), scale));
                 }
                 if ("FLOAT".equals(geoGrid.getDataType().name())) {
                     float[][] grid = (float[][]) geoGrid.readYXData(t, 0).copyToNDJavaArray();
                     g.setGrid(grid);
                 } else if ("DOUBLE".equals(geoGrid.getDataType().name())) {
                     double[][] grid = (double[][]) geoGrid.readYXData(t, 0).copyToNDJavaArray();
-                    g.setGrid(doubleArrayToFloatArray(grid));
+                    g.setGrid(ArrayUtil.doubleArrayToFloatArray(grid));
                 } else {
                     throw new Exception("格点解析异常，数据类型未指定：" + geoGrid.getDataType().name());
                 }

@@ -1,4 +1,4 @@
-package com.wrh.meteo;
+package com.wrh.meteo.util;
 
 import com.wrh.meteo.component.exception.FileNotOnlyException;
 import org.apache.commons.io.FileUtils;

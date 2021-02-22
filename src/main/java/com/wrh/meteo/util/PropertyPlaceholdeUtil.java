@@ -1,4 +1,4 @@
-package com.wrh.meteo;
+package com.wrh.meteo.util;
 
 import org.springframework.util.PropertyPlaceholderHelper;
 
