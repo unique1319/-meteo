@@ -68,7 +68,7 @@ public class ReadNcFile {
             float xRes = NumberUtil.round(BigDecimal.valueOf(lon[1] - lon[0]), scale).floatValue();
 
             for (int i = 0; i < time.length; i++) {
-                int timeNumber = time[i];
+                int timeNumber = time[i]; // 获取时间
                 GridData g = new GridData();
                 g.setGrid(grid[i]);
                 g.setStartY(startY);
