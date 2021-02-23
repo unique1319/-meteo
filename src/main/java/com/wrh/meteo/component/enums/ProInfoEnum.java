@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
  * @author wrh
  * @version 1.0
  * @date 2021/2/23 11:26
- * @describe 中国各省份信息枚举(包括CCCC码, 行政区码, 省份名称, 简称, 以及经纬度范围)
+ * @describe 中国各省份信息枚举(包括CCCC码, 行政区码, 省份全称, 简称, 以及经纬度范围)
  */
 
 @AllArgsConstructor
