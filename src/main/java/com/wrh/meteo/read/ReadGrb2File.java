@@ -23,6 +23,10 @@ import java.util.List;
  */
 public class ReadGrb2File {
 
+    /**
+     * @param file GRB2格点文件
+     * @return List<GridData> 格点集合
+     */
     public List<GridData> read(File file) {
         int scale = 3;
         List<GridData> list = new ArrayList<>();

@@ -17,10 +17,10 @@
         <java.version>1.8</java.version>
         <skipTests>true</skipTests>
         <!-- 版本属性 -->
-        <lombok.version>1.18.18</lombok.version>
+        <hxlc.meteodata.version>1.3.2</hxlc.meteodata.version>
+        <hxlc.draw-core.version>2.3-SNAPSHOT</hxlc.draw-core.version>  <lombok.version>1.18.18</lombok.version>
         <springframework.version>5.3.3</springframework.version>
         <commons-io.version>2.8.0</commons-io.version>
-        <meteodata.version>1.3.2</meteodata.version>
         <netcdfAll.version>4.6.8</netcdfAll.version>
         <fastjson.version>1.2.75</fastjson.version>
 
@@ -56,7 +56,13 @@
         <dependency>
              <groupId>com.hxgis</groupId>
              <artifactId>meteodata</artifactId>
-             <version>${meteodata.version}</version>
+             <version>${hxlc.meteodata.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hxgis.draw</groupId>
+            <artifactId>draw-core</artifactId>
+            <version>${hxlc.draw-core.version}</version>
         </dependency>
 
         <dependency>

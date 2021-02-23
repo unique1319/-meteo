@@ -21,6 +21,11 @@ import java.util.List;
  */
 public class ReadNcFile {
 
+    /**
+     * @param file     NC格点文件
+     * @param fullName 要素全称
+     * @return List<GridData> 格点集合
+     */
     public static List<GridData> read(File file, String fullName) {
         int scale = 3;
         NetcdfFile openNC = null;

@@ -2,7 +2,6 @@ package com.wrh.meteo.read;
 
 import com.hxgis.meteodata.comdata.GridData;
 import com.hxgis.meteodata.common.Binary.LittleEndianReader;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStream;
 
 import java.io.BufferedInputStream;
@@ -34,6 +33,10 @@ import java.util.List;
 
 public class ReadCmorphFile {
 
+    /**
+     * @param file Cmorph文件
+     * @return List<GridData> 格点集合
+     */
     public static List<GridData> read(File file) {
         List<GridData> gridDataList = new ArrayList<>();
         BufferedInputStream dis = null;
