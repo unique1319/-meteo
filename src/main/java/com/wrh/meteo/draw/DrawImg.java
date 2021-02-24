@@ -27,8 +27,14 @@ import java.awt.image.BufferedImage;
  */
 public class DrawImg {
 
-    private static final int imgWidth = 700;
-    private static final int imgHeight = 500;
+    private static final int imgWidth;
+    private static final int imgHeight;
+
+    static {
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        imgWidth = (int) (screenSize.getWidth() * 0.7);
+        imgHeight = (int) (screenSize.getHeight() * 0.7);
+    }
 
     /**
      * @param grid           格点数据
