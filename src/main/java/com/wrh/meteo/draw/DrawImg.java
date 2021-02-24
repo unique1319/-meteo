@@ -39,7 +39,7 @@ public class DrawImg {
      * @param legendEnum     色卡枚举
      * @param isCover        是否允许边界覆盖
      * @param isoTracerClass 渲染类型：GeoJson||格点填色
-     * @param <T>            IsoTracer
+     * @param <T>            IsoTracer实现类
      * @return BufferedImage
      * @throws Exception 绘制异常
      */
