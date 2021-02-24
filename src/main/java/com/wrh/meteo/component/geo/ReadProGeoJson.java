@@ -22,12 +22,21 @@ public class ReadProGeoJson {
      * @return GeoJson
      */
     public static JSONObject getBoundaryGeoJsonRead(String adminCode) {
+        return JSONObject.parseObject(getBoundaryGeoJsonStringRead(adminCode));
+    }
+
+    /**
+     * 获取省份边界 GeoJson字符串
+     *
+     * @param adminCode 行政区码（例如湖北：420000）
+     * @return String
+     */
+    public static String getBoundaryGeoJsonStringRead(String adminCode) {
         String filePath = "public/GeoAtlas/" + adminCode + ".json";
         InputStream dataStream = ReadProGeoJson.class.getClassLoader().getResourceAsStream(filePath);
         try {
             assert dataStream != null;
-            String json = IOUtils.toString(dataStream, StandardCharsets.UTF_8);
-            return JSONObject.parseObject(json);
+            return IOUtils.toString(dataStream, StandardCharsets.UTF_8);
         } catch (IOException e) {
             e.printStackTrace();
             return null;
