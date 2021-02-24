@@ -13,14 +13,11 @@ import com.hxgis.meteodata.comdata.GridData;
 import com.wrh.meteo.component.enums.LegendEnum;
 import com.wrh.meteo.component.enums.ProInfoEnum;
 import com.wrh.meteo.component.geo.ReadProGeoJson;
-import com.wrh.meteo.component.help.JFrameHelp;
-import com.wrh.meteo.read.ReadGrb2File;
 import org.geojson.Feature;
 import org.geojson.FeatureCollection;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
 
 /**
  * @author wrh
@@ -71,13 +68,6 @@ public class DrawImg {
         // 绘制边界
         contourImageRenderer.addAfterDrawIntercepter(DrawPhase.draw_contour, (rootPanel, lonLatPanel, board) -> lonLatPanel.addShape(boundFeatures));
         return contourImageRenderer.render(grid);
-    }
-
-    public static void main(String[] args) throws Exception {
-        String filePath = "E:\\ART\\PRE_FAST_DAY\\20191202\\Z_SURF_C_BABJ_20191202081101_P_CMPA_FAST_CHN_0P05_DAY-PRE-2019120208.GRB2";
-        GridData gridData = ReadGrb2File.read(new File(filePath)).get(0);
-        gridData = gridData.cut(ProInfoEnum.BCWH.getMinLon(), ProInfoEnum.BCWH.getMinLat(), ProInfoEnum.BCWH.getMaxLon(), ProInfoEnum.BCWH.getMaxLat());
-        JFrameHelp.showImageFrame(drawGridData(gridData, ProInfoEnum.BCWH, LegendEnum.RAIN_1H, false, WContourIsoTracer.class));
     }
 
 }
