@@ -4,6 +4,8 @@ import com.hxgis.meteodata.comdata.GridData;
 import com.wrh.meteo.util.ArrayUtil;
 import com.wrh.meteo.util.NumberUtil;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import ucar.ma2.Array;
 import ucar.nc2.dt.GridCoordSystem;
 import ucar.nc2.dt.GridDatatype;
@@ -27,7 +29,7 @@ public class ReadGrb2File {
      * @param file GRB2格点文件
      * @return List<GridData> 格点集合
      */
-    public List<GridData> read(File file) {
+    public static List<GridData> read(File file) {
         int scale = 3;
         List<GridData> list = new ArrayList<>();
         AccessGRBData grbData = null;
@@ -86,7 +88,8 @@ public class ReadGrb2File {
         return list;
     }
 
-    @Data
+    @Getter
+    @Setter
     private static class AccessGRBData {
         private String filePath;
         private List<GridDatatype> grids;

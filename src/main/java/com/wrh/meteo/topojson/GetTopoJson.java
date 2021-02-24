@@ -1,4 +1,4 @@
-package com.wrh.meteo.topjson;
+package com.wrh.meteo.topojson;
 
 import com.wrh.meteo.component.geo.ReadProGeoJson;
 import com.wrh.meteo.util.StrUtil;
@@ -19,7 +19,7 @@ import java.io.IOException;
  * @date 2021/2/23 17:12
  * @describe GeoJson字符串转换为TopoJson字符串
  */
-public class GetTopJson {
+public class GetTopoJson {
 
     /**
      * GeoJson字符串转换为TopoJson字符串

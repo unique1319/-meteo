@@ -1,6 +1,8 @@
 package com.wrh.meteo.component.enums;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
 
 /**
  * @author wrh
@@ -9,6 +11,7 @@ import lombok.AllArgsConstructor;
  * @describe 中国各省份信息枚举(包括CCCC码, 行政区码, 省份全称, 简称, 以及经纬度范围)
  */
 
+@Getter
 @AllArgsConstructor
 public enum ProInfoEnum {
 
@@ -48,8 +51,8 @@ public enum ProInfoEnum {
     private final String adminCode;
     private final String name;
     private final String shortName;
-    private final float startLon;
-    private final float startLat;
-    private final float endLon;
-    private final float endLat;
+    private final float minLon;
+    private final float minLat;
+    private final float maxLon;
+    private final float maxLat;
 }

@@ -1,6 +1,7 @@
 package com.wrh.meteo.component.enums;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 /**
  * @author wrh
@@ -8,6 +9,7 @@ import lombok.AllArgsConstructor;
  * @date 2021/2/24 13:52
  * @describe 坡度定义枚举类
  */
+@Getter
 @AllArgsConstructor
 public enum SlopeDefineEnum {
 
