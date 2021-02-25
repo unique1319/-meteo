@@ -2,36 +2,25 @@ package com.wrh.meteo.component.quickhull;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.hxgis.draw.contour.OriginLonLatBound;
-import com.hxgis.draw.contour.bean.FloatImageDiscreteData;
-import com.hxgis.draw.contour.bean.FloatInterpolateType;
-import com.hxgis.draw.contour.renderer.ContourImageRenderer;
-import com.hxgis.draw.contour.renderer.DrawPhase;
-import com.hxgis.draw.contour.renderer.FloatContourImageRenderer;
 import com.hxgis.draw.core.Board;
 import com.hxgis.draw.core.Offset;
 import com.hxgis.draw.core.PolygonEx;
 import com.hxgis.draw.core.PositionDescriber;
 import com.hxgis.draw.core.feature.Circle;
-import com.hxgis.draw.core.feature.JavaShape;
 import com.hxgis.draw.core.panel.LonLatPanel;
 import com.hxgis.draw.core.panel.XYPanel;
-import com.hxgis.meteodata.comdata.GridData;
 import com.wrh.meteo.component.enums.ProInfoEnum;
-import com.wrh.meteo.component.help.JFrameHelp;
+import com.wrh.meteo.draw.help.JFrameHelp;
 import com.wrh.meteo.component.quickhull.datastructures.LinkedList;
 import com.wrh.meteo.component.quickhull.datastructures.LinkedListNode;
 import com.wrh.meteo.draw.DrawImg;
 import org.geojson.FeatureCollection;
-import org.geojson.LngLatAlt;
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
 import java.awt.geom.Point2D;
-import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author wrh

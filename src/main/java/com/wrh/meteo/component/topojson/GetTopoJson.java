@@ -1,4 +1,4 @@
-package com.wrh.meteo.topojson;
+package com.wrh.meteo.component.topojson;
 
 import com.wrh.meteo.util.StrUtil;
 import com.wrh.meteo.util.StringUtil;

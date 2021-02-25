@@ -1,4 +1,4 @@
-package com.wrh.meteo.topojson;
+package com.wrh.meteo.component.topojson;
 
 import com.wrh.meteo.component.geo.ReadProGeoJson;
 import org.apache.commons.io.FileUtils;

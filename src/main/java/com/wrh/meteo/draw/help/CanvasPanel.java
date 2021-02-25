@@ -1,4 +1,4 @@
-package com.wrh.meteo.component.help;
+package com.wrh.meteo.draw.help;
 
 import javax.swing.*;
 import java.awt.*;

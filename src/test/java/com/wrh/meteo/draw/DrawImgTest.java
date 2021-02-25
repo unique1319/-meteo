@@ -8,7 +8,7 @@ import com.hxgis.draw.contour.bean.FloatInterpolateType;
 import com.hxgis.meteodata.comdata.GridData;
 import com.wrh.meteo.component.enums.LegendEnum;
 import com.wrh.meteo.component.enums.ProInfoEnum;
-import com.wrh.meteo.component.help.JFrameHelp;
+import com.wrh.meteo.draw.help.JFrameHelp;
 import com.wrh.meteo.component.test.GetTestData;
 import com.wrh.meteo.read.ReadGrb2File;
 import org.junit.jupiter.api.Test;

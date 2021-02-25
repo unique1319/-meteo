@@ -1,12 +1,7 @@
-package com.wrh.meteo.component.help;
-
-import com.wrh.meteo.component.quickhull.QuickHull;
-import com.wrh.meteo.component.quickhull.datastructures.LinkedList;
-import com.wrh.meteo.component.quickhull.datastructures.LinkedListNode;
+package com.wrh.meteo.draw.help;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
 
 public class JFrameHelp {
