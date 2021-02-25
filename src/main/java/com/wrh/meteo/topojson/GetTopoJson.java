@@ -70,12 +70,4 @@ public class GetTopoJson {
             }
         }
     }
-
-
-    public static void main(String[] args) throws IOException {
-        String geojson = ReadProGeoJson.getBoundaryGeoJsonStringRead("420000");
-        FileUtils.write(new File("C:\\Users\\Administrator\\Desktop\\test\\topojson.json"), convertGeoJsonToTopoJson(geojson), "utf-8");
-    }
-
-
 }

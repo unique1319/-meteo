@@ -101,9 +101,4 @@ public class ReadNcFile {
         return list;
     }
 
-    public static void main(String[] args) {
-        String filePath = "C:\\Users\\Administrator\\Desktop\\test\\P_CMPA_NRT_CHN_0P05_HOR-PRE-2018010104.nc";
-        read(new File(filePath), "rain");
-    }
-
 }

@@ -3,7 +3,6 @@ package com.wrh.meteo.read;
 import com.hxgis.meteodata.comdata.GridData;
 import com.wrh.meteo.util.ArrayUtil;
 import com.wrh.meteo.util.NumberUtil;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import ucar.ma2.Array;
