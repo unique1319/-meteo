@@ -28,35 +28,4 @@ public class JFrameHelp {
         }
     }
 
-    public static void main(String[] args) {
-
-        LinkedList points = new LinkedList();
-        points.insert(new Point2D.Double(50, 50));
-        points.insert(new Point2D.Double(360, 70));
-        points.insert(new Point2D.Double(42, 293));
-        points.insert(new Point2D.Double(150, 200));
-        points.insert(new Point2D.Double(168, 258));
-        points.insert(new Point2D.Double(260, 362));
-
-        QuickHull quickHull = new QuickHull();
-        LinkedList calcPointsSet = quickHull.useAlgorithm(points);
-
-        int imageWidth = 400;
-        int imageHeight = 400;
-        BufferedImage image = new BufferedImage(imageWidth, imageHeight, BufferedImage.TYPE_INT_RGB);
-        Graphics g = image.getGraphics();
-        g.setColor(Color.WHITE);
-        g.fillRect(0, 0, imageWidth, imageHeight);
-        g.setColor(Color.BLACK);
-
-        LinkedListNode node = calcPointsSet.getHead();
-        while (node != null) {
-            Point2D.Double point = node.getPoint();
-            g.drawOval((int) point.x, (int) point.y, 8, 8);
-            node = node.getNext();
-        }
-        g.dispose();
-        showImageFrame(image);
-    }
-
 }

@@ -21,6 +21,7 @@ import com.hxgis.meteodata.comdata.GridData;
 import com.wrh.meteo.component.enums.LegendEnum;
 import com.wrh.meteo.component.enums.ProInfoEnum;
 import com.wrh.meteo.component.geo.ReadProGeoJson;
+import lombok.Getter;
 import org.geojson.Feature;
 import org.geojson.FeatureCollection;
 
@@ -36,7 +37,9 @@ import java.util.List;
  */
 public class DrawImg {
 
+    @Getter
     private static final int imgWidth;
+    @Getter
     private static final int imgHeight;
 
     static {
