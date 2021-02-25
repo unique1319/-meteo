@@ -1,9 +1,7 @@
 package com.wrh.meteo.topojson;
 
-import com.wrh.meteo.component.geo.ReadProGeoJson;
 import com.wrh.meteo.util.StrUtil;
 import com.wrh.meteo.util.StringUtil;
-import org.apache.commons.io.FileUtils;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
