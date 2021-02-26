@@ -55,6 +55,19 @@ public class DateUtil {
     }
 
     /**
+     * 修改时间字符串格式
+     *
+     * @param dateTime   时间字符串
+     * @param oldPattern 旧的时间格式
+     * @param newPattern 新的时间格式
+     * @return 新的时间字符串
+     */
+    public static String changeFormat(String dateTime, String oldPattern, String newPattern) {
+        LocalDateTime localDateTime = parse(dateTime, oldPattern);
+        return format(localDateTime, newPattern);
+    }
+
+    /**
      * LocalDateTime 格式化
      *
      * @param localDateTime LocalDateTime
@@ -77,6 +90,7 @@ public class DateUtil {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
         return LocalDateTime.parse(dateTimeStr, formatter);
     }
+
 
     /**
      * 北京时转世界时
@@ -125,6 +139,7 @@ public class DateUtil {
         LocalDateTime localDateTime = dateToLocalDateTime(date);
         return format(localDateTime, pattern);
     }
+
 
     /**
      * 获取两时间相差天数
