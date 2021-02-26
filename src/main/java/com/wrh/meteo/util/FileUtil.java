@@ -17,6 +17,9 @@ import java.util.Collection;
  */
 public class FileUtil {
 
+    private FileUtil() {
+    }
+
     /**
      * 从本地目录读取文件
      *

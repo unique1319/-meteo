@@ -8,6 +8,9 @@ package com.wrh.meteo.util;
  */
 public class ArrayUtil {
 
+    private ArrayUtil() {
+    }
+
     public static float[][][] doubleArrayToFloatArray(double[][][] array) {
         int lenX = array.length;
         int lenY = array[0].length;

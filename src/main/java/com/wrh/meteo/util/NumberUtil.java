@@ -11,6 +11,9 @@ import java.text.DecimalFormat;
  */
 public class NumberUtil {
 
+    private NumberUtil() {
+    }
+
     public static BigDecimal round(BigDecimal b, int scale) {
         return b.setScale(scale, BigDecimal.ROUND_HALF_UP);
     }

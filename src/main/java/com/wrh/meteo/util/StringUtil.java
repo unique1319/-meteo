@@ -12,6 +12,9 @@ import java.util.regex.Pattern;
  */
 public class StringUtil {
 
+    private StringUtil() {
+    }
+
     public final static String DOLLAR_DOLLAR_REGEX = "(?<=\\u0024\\{).*?(?=})"; // 正则匹配${}表达式
     public final static String MUlTI_SPACE_REGEX = "\\s+"; // 正则匹配多个空格
 

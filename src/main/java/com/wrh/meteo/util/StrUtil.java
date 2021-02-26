@@ -8,6 +8,9 @@ package com.wrh.meteo.util;
  */
 public class StrUtil {
 
+    private StrUtil() {
+    }
+
     public static final String SPACE = " ";
     public static final String TAB = "\t";
     public static final String DOT = ".";

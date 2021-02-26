@@ -8,6 +8,9 @@ package com.wrh.meteo.util;
  */
 public class ConvertHumidityUtil {
 
+    private ConvertHumidityUtil() {
+    }
+
     /*------------ 比湿转相对湿度 ---------------------------------------------------------*/
 
     /**

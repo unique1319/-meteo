@@ -12,6 +12,9 @@ import java.time.format.DateTimeFormatter;
  */
 public final class PropertyPlaceholdeUtil {
 
+    private PropertyPlaceholdeUtil() {
+    }
+
     private static final PropertyPlaceholderHelper fixedHelper = new PropertyPlaceholderHelper("${", "}");
     private static final PropertyPlaceholderHelper unFixedHelper = new PropertyPlaceholderHelper("#[", "]");
 
