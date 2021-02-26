@@ -1,9 +1,6 @@
 package com.wrh.meteo.util;
 
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
@@ -79,6 +76,30 @@ public class DateUtil {
     public static LocalDateTime parse(String dateTimeStr, String pattern) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
         return LocalDateTime.parse(dateTimeStr, formatter);
+    }
+
+    /**
+     * 北京时转世界时
+     *
+     * @param bjTime 北京时
+     * @return 世界时
+     */
+    public static LocalDateTime bj2Utc(LocalDateTime bjTime) {
+        ZonedDateTime zonedTime = bjTime.atZone(ZoneId.of("Asia/Shanghai"));
+        ZonedDateTime converted = zonedTime.withZoneSameInstant(ZoneOffset.UTC);
+        return converted.toLocalDateTime();
+    }
+
+    /**
+     * 世界时转北京时
+     *
+     * @param utcTime 世界时
+     * @return 北京时
+     */
+    public static LocalDateTime utc2Bj(LocalDateTime utcTime) {
+        ZonedDateTime zonedTime = utcTime.atZone(ZoneOffset.UTC);
+        ZonedDateTime converted = zonedTime.withZoneSameInstant(ZoneId.of("Asia/Shanghai"));
+        return converted.toLocalDateTime();
     }
 
 }
