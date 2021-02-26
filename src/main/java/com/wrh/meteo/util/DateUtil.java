@@ -102,4 +102,65 @@ public class DateUtil {
         return converted.toLocalDateTime();
     }
 
+    /**
+     * 解析Date
+     *
+     * @param dateTime 时间字符串
+     * @param pattern  时间格式
+     * @return Date
+     */
+    public static Date parseDate(String dateTime, String pattern) {
+        LocalDateTime localDateTime = parse(dateTime, pattern);
+        return localDateTimeToDate(localDateTime);
+    }
+
+    /**
+     * 格式化Date
+     *
+     * @param date    Date对象
+     * @param pattern 时间格式
+     * @return 时间字符串
+     */
+    public static String formatDate(Date date, String pattern) {
+        LocalDateTime localDateTime = dateToLocalDateTime(date);
+        return format(localDateTime, pattern);
+    }
+
+    /**
+     * 获取两时间相差天数
+     *
+     * @param start 开始时间
+     * @param end   结束时间
+     * @return 相差天数
+     */
+    public static long getDurationDays(LocalDateTime start, LocalDateTime end) {
+        Duration duration = Duration.between(start, end);
+        return duration.toDays();
+    }
+
+    /**
+     * 获取两时间相差小时数
+     *
+     * @param start 开始时间
+     * @param end   结束时间
+     * @return 相差小时数
+     */
+    public static long getDurationHours(LocalDateTime start, LocalDateTime end) {
+        Duration duration = Duration.between(start, end);
+        return duration.toHours();
+    }
+
+    /**
+     * 获取两时间相差分钟数
+     *
+     * @param start 开始时间
+     * @param end   结束时间
+     * @return 相差分钟数
+     */
+    public static long getDurationMinutes(LocalDateTime start, LocalDateTime end) {
+        Duration duration = Duration.between(start, end);
+        return duration.toMinutes();
+    }
+
+
 }
