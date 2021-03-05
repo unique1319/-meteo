@@ -39,6 +39,13 @@ public class StrUtil {
     public static final String HTML_GT = "&gt;";
     public static final String EMPTY_JSON = "{}";
 
+    /**
+     * 按重复次数拼接指定字符串
+     *
+     * @param str   指定字符
+     * @param count 指定长度
+     * @return 字符串
+     */
     public static String repeat(CharSequence str, int count) {
         if (null == str) {
             return null;
@@ -66,6 +73,7 @@ public class StrUtil {
     }
 
     public static void main(String[] args) {
-        System.out.println(repeat("t",3));
+        System.out.println(repeat("123", 3));
     }
+
 }
