@@ -25,7 +25,21 @@ class ArrayUtilTest {
     void arrayToList() {
         Float[] f = new Float[]{1.2f, 2.3f, 3.4f, 2.5f};
         List<Float> list = ArrayUtil.arrayToList(f);
-        Float[] array = ArrayUtil.listToArray(list,Float.class);
+        Float[] array = ArrayUtil.listToArray(list, Float.class);
         System.out.println(ObjectUtils.nullSafeToString(array));
+    }
+
+    @Test
+    void arrayHandle() {
+        float[][] f = new float[][]{{1.2f, 2.3f}, {3.4f, 2.5f}};
+        ArrayUtil.arrayHandle(f, (fv) -> fv + 1f);
+        System.out.println("finish");
+    }
+
+    @Test
+    void arrayHandle2() {
+        float[][] f = new float[][]{{1.2f, 2.3f}, {3.4f, 2.5f}};
+        ArrayUtil.arrayHandle(f, ArrayUtil.ArrayHandle::handle_centigrade_to_kelvin);
+        System.out.println("finish");
     }
 }

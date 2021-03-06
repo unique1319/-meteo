@@ -1,9 +1,11 @@
 package com.wrh.meteo.util;
 
+import com.hxgis.meteodata.comdata.GridData;
 import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;
 
 import java.lang.reflect.Array;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -81,6 +83,43 @@ public class ArrayUtil {
             f[i] = Float.parseFloat(String.valueOf(array[i]));
         }
         return f;
+    }
+
+    @FunctionalInterface
+    interface ArrayHandle {
+        float handle(float f);
+
+        static float handle_m_to_km(float f) {
+            return NumberUtil.round(BigDecimal.valueOf(f / 1000f), 1).floatValue();
+        }
+
+        static float handle_km_to_m(float f) {
+            return NumberUtil.round(BigDecimal.valueOf(f * 1000f), 1).floatValue();
+        }
+
+        static float handle_kelvin_to_centigrade(float f) {
+            return NumberUtil.round(BigDecimal.valueOf(f - 273.15f), 1).floatValue();
+        }
+
+        static float handle_centigrade_to_kelvin(float f) {
+            return NumberUtil.round(BigDecimal.valueOf(f + 273.15f), 1).floatValue();
+        }
+
+        static float handle_decimal_to_percentage(float f) {
+            return NumberUtil.round(BigDecimal.valueOf(f * 100f), 1).floatValue();
+        }
+
+        static float handle_percentage_to_decimal(float f) {
+            return NumberUtil.round(BigDecimal.valueOf(f / 100f), 1).floatValue();
+        }
+    }
+
+    public static void arrayHandle(float[][] floats, ArrayHandle arrayHandle) {
+        for (int i = 0; i < floats.length; i++) {
+            for (int j = 0; j < floats[0].length; j++) {
+                floats[i][j] = arrayHandle.handle(floats[i][j]);
+            }
+        }
     }
 
 }
