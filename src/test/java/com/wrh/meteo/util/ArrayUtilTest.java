@@ -38,7 +38,7 @@ class ArrayUtilTest {
 
     @Test
     void arrayHandle2() {
-        float[][] f = new float[][]{{1.2f, 2.3f}, {3.4f, 2.5f}};
+        double[][] f = new double[][]{{1.2f, 2.3f}, {3.4f, 2.5f}};
         ArrayUtil.arrayHandle(f, ArrayUtil.ArrayHandle::handle_centigrade_to_kelvin);
         System.out.println("finish");
     }

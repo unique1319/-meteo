@@ -1,6 +1,5 @@
 package com.wrh.meteo.util;
 
-import com.hxgis.meteodata.comdata.GridData;
 import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;
 
@@ -122,4 +121,11 @@ public class ArrayUtil {
         }
     }
 
+    public static void arrayHandle(double[][] doubles, ArrayHandle arrayHandle) {
+        for (int i = 0; i < doubles.length; i++) {
+            for (int j = 0; j < doubles[0].length; j++) {
+                doubles[i][j] = arrayHandle.handle((float) doubles[i][j]);
+            }
+        }
+    }
 }
