@@ -18,8 +18,9 @@ public class Algorithm {
      */
     public static List<VecutePoint> vecutePoints(List<VecutePoint> pList,
                                                  int m, int n) {
-        if (pList == null || m < 1 || n < 1)
+        if (pList == null || m < 1 || n < 1) {
             return vecute(null);
+        }
         double minX = Double.MAX_VALUE, maxX = 0;
         double minY = Double.MAX_VALUE, maxY = 0;
         double x, y;
@@ -42,10 +43,11 @@ public class Algorithm {
             j = (int) ((vo.getY() - minY) / disY);
             j = (j < n) ? j : n - 1;
             point = vecuteMatrix[i][j];
-            if (point == null)
+            if (point == null) {
                 vecuteMatrix[i][j] = vo;
-            else
+            } else {
                 point.setSum(point.getSum() + 1);
+            }
         }
         return vecute(vecuteMatrix);
     }
@@ -58,12 +60,14 @@ public class Algorithm {
      */
     private static List<VecutePoint> vecute(VecutePoint[][] vecuteMatrix) {
         List<VecutePoint> reList = new ArrayList<>();// 抽稀后的数据
-        if (vecuteMatrix == null)
+        if (vecuteMatrix == null) {
             return reList;
+        }
         for (VecutePoint[] vos : vecuteMatrix) {
             for (VecutePoint vo : vos) {
-                if (vo == null)
+                if (vo == null) {
                     continue;
+                }
                 reList.add(vo);
             }
         }
