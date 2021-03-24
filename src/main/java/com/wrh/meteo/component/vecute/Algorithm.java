@@ -37,7 +37,7 @@ public class Algorithm {
         VecutePoint[][] vecuteMatrix = new VecutePoint[m][n];// 抽稀矩阵，存放数据
         int i, j;// 计算这个点应该放在矩阵哪个位置
         VecutePoint point;
-        for (VecutePoint vo : pList) {// 第二次遍历，抽稀
+        for (VecutePoint vo : pList) { // 第二次遍历，抽稀
             i = (int) ((vo.getX() - minX) / disX);
             i = (i < m) ? i : m - 1;
             j = (int) ((vo.getY() - minY) / disY);
