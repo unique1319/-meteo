@@ -1,13 +1,12 @@
 package com.wrh.meteo.util;
 
 
-import com.wrh.meteo.component.LunarCalendar;
+import com.wrh.meteo.component.lunar.Lunar;
+import com.wrh.meteo.component.lunar.LunarSolar;
 
 import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -163,19 +162,6 @@ public class HolidayCalculateUtil {
         return (flag1 && !flag2) || (flag3);
     }
 
-    /**
-     * 根据农历日期计算公历日期
-     *
-     * @param lunarYear       农历年
-     * @param lunarMonth      农历月
-     * @param dayOfLunarMonth 农历日
-     * @return 公历日期
-     */
-    public static LocalDateTime lunar2Solar(int lunarYear, int lunarMonth, int dayOfLunarMonth) {
-        LunarCalendar lunar = new LunarCalendar(lunarYear, lunarMonth, dayOfLunarMonth, isLeapYear(lunarYear));
-        Calendar solar = LunarCalendar.lunar2Solar(lunar.getLunarYear(), lunar.getLunarMonth(), lunar.getDayOfLunarMonth(), lunar.isLeapMonth());
-        return solar.getTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
-    }
 
     /**
      * 计算法定节假日
@@ -191,7 +177,7 @@ public class HolidayCalculateUtil {
         } else if (holidayEnum.Type.equals(SOLAR_CALENDAR)) {
             solar = LocalDateTime.of(year, holidayEnum.month, holidayEnum.dayOfMonth, 0, 0);
         } else if (holidayEnum.Type.equals(LUNAR_CALENDAR)) {
-            solar = lunar2Solar(year, holidayEnum.month, holidayEnum.dayOfMonth);
+            solar = LunarSolar.lunarToSolar(new Lunar(year, holidayEnum.month, holidayEnum.dayOfMonth)).toLocalDateTime();
         } else {
             throw new RuntimeException("无效的类型：" + holidayEnum.Type);
         }
