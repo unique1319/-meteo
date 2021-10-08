@@ -177,5 +177,28 @@ public class DateUtil {
         return duration.toMinutes();
     }
 
+    /**
+     * 获取时间戳
+     *
+     * @param time
+     * @return
+     */
+    public static long getLong(ZonedDateTime time) {
+        return Date.from(time.toInstant()).getTime();
+    }
+
+
+    public static void foreachInTimeRange(LocalDateTime start, LocalDateTime end, int minIncrement, ForeachInTimeRange foreachInTimeRange) {
+        while (start.isBefore(end) || start.isEqual(end)) {
+            foreachInTimeRange.execute(start);
+            start = start.plusMinutes(minIncrement);
+        }
+
+    }
+
+    public interface ForeachInTimeRange {
+        void execute(LocalDateTime localDateTime);
+    }
+
 
 }
