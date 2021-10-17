@@ -41,15 +41,18 @@ public class ReadGrb2File {
             Array lonArray = null;
             int tsize = 0, latSize = 0, lonSize = 0;
             if (coordinateSystem.getTimeAxis() != null) {
-                Array tArray = coordinateSystem.getTimeAxis().read(); // time
+                // time
+                Array tArray = coordinateSystem.getTimeAxis().read();
                 tsize = (int) tArray.getSize();
             }
             if (coordinateSystem.getYHorizAxis() != null) {
-                latArray = coordinateSystem.getYHorizAxis().read(); // lat
+                // lat
+                latArray = coordinateSystem.getYHorizAxis().read();
                 latSize = (int) latArray.getSize();
             }
             if (coordinateSystem.getXHorizAxis() != null) {
-                lonArray = coordinateSystem.getXHorizAxis().read(); // lon
+                // lon
+                lonArray = coordinateSystem.getXHorizAxis().read();
                 lonSize = (int) lonArray.getSize();
             }
             for (int t = 0; t < tsize; t++) {
